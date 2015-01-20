@@ -7,17 +7,57 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import "LoginViewController.h"
+#import "ToDoTableViewController.h"
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "DataService.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+@synthesize incompletedItems;
+@synthesize completedItems;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //[Parse enableLocalDatastore];
+    [Parse setApplicationId:@"rlE4EzugnQuvAExIWXg1nylaD8q4gda3GdPGIikr"
+                  clientKey:@"sF5YTXOylZoprbcr6DmIzcP8FTIUnlAGOMCvbmGz"];
+    [PFFacebookUtils initializeFacebook];
+                                                                                                                                                                                                                                                                                                                                                                                                   
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+    
+    self.incompletedItems = [NSMutableArray array];
+    self.completedItems = [NSMutableArray array];
+    
+    if([PFUser currentUser])
+    {
+        ToDoTableViewController *toDoTableViewController = [storyboard instantiateViewControllerWithIdentifier:@"ToDoTableViewController"];
+        [navigationController setViewControllers:[NSArray arrayWithObject:toDoTableViewController] animated:YES];
+        self.window.rootViewController = navigationController;
+    }
+    else
+    {
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [navigationController setViewControllers:[NSArray arrayWithObject:loginViewController] animated:YES];
+        self.window.rootViewController = navigationController;
+    }
+    
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
