@@ -17,7 +17,7 @@ static BOOL _isReachable;
 
 @implementation DataService
 
-- (void) checkForConnection
++ (BOOL) checkForConnection
 {
     
     // Allocate a reachability object
@@ -43,6 +43,8 @@ static BOOL _isReachable;
     
     // Start the notifier, which will cause the reachability object to retain itself!
     [reach startNotifier];
+    
+    return _isReachable;
 }
 
 + (void)saveToDoItem:(ToDoModel *)toDoModel
@@ -86,7 +88,7 @@ static BOOL _isReachable;
     toDoItem[ITEM_COMPLETED] = (toDoModel.completed) ? @YES : @NO ;
     toDoItem[ITEM_USERID] = userModel.objectId;
     
-    if(_isReachable)
+    if([DataService checkForConnection])
     {
         [toDoItem saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             [DataService updateCachedToDoItems:toDoModel.completed];
@@ -164,6 +166,30 @@ static BOOL _isReachable;
     }];
 }
 
++ (void) signUp:(UserModel*)userModel withCompletionBlock:(void(^)(BOOL succeeded, NSError *error))completionBlock {
+    
+    PFUser *userParse = [PFUser user];
+    userParse.username = userParse.email = userModel.email;
+    userParse.password = userModel.password;
+    
+    [userParse signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        completionBlock(succeeded,error);
+    }];
 
+}
+
++ (void) signIn:(UserModel*)userModel withCompletionBlock:(void(^)(BOOL succeeded, NSError *error))completionBlock {
+    
+    [PFUser logInWithUsernameInBackground:userModel.email password:userModel.password block:^(PFUser *user, NSError *error) {
+        if(user)
+        {
+            completionBlock(YES, error);
+        }
+        else
+        {
+            completionBlock(NO, error);
+        }
+    }];
+}
 
 @end

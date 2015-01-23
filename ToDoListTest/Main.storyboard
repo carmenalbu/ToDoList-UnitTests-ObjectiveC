@@ -178,12 +178,12 @@
                                     <action selector="action_loginWithFacebook:" destination="0Zd-Qc-XO3" eventType="touchUpInside" id="cak-GB-u8s"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ba-wx-gaf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ba-wx-gaf">
                                 <rect key="frame" x="22" y="190" width="276" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-wu-cZ9">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW1-wu-cZ9">
                                 <rect key="frame" x="22" y="287" width="276" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -195,7 +195,7 @@
                                     <action selector="action_logIn:" destination="0Zd-Qc-XO3" eventType="touchUpInside" id="ZBU-Rm-mWt"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BP-PT-K51">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BP-PT-K51">
                                 <rect key="frame" x="22" y="493" width="276" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.84313725490000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign Up">
@@ -203,14 +203,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="action_signUp:" destination="0Zd-Qc-XO3" eventType="touchUpInside" id="ANg-3k-maZ"/>
-                                    <segue destination="Jo6-18-ARO" kind="show" id="n0z-kr-SVA"/>
+                                    <action selector="action_signUp:" destination="0Zd-Qc-XO3" eventType="touchUpInside" id="o7u-pl-CFB"/>
+                                    <segue destination="Jo6-18-ARO" kind="show" id="2WX-7x-nXZ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="7vH-vm-1Xl">
                                 <rect key="frame" x="86" y="73" width="150" height="93"/>
                             </imageView>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Zh-3n-Dsx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Zh-3n-Dsx">
                                 <rect key="frame" x="22" y="234" width="276" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -222,10 +222,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="emailTextField" destination="9Ba-wx-gaf" id="ZYP-Yz-TWa"/>
-                        <outlet property="logInButton" destination="iW1-wu-cZ9" id="ECd-5Y-lLO"/>
+                        <outlet property="logInButton" destination="iW1-wu-cZ9" id="KOW-kq-Dex"/>
                         <outlet property="loginFacebookButton" destination="2ya-Yt-W7e" id="1pq-Ra-1go"/>
                         <outlet property="passwordTextField" destination="5Zh-3n-Dsx" id="WXd-LH-NKO"/>
-                        <outlet property="signUpButton" destination="9BP-PT-K51" id="efJ-hs-hiJ"/>
+                        <outlet property="signUpButton" destination="9BP-PT-K51" id="yue-bw-cGS"/>
                         <segue destination="eyn-Ia-E3j" kind="show" identifier="goToTableViewController" id="n15-K9-OWb"/>
                     </connections>
                 </viewController>
@@ -260,7 +260,6 @@
                                 </state>
                                 <connections>
                                     <action selector="action_signUp:" destination="Jo6-18-ARO" eventType="touchUpInside" id="fxL-UM-WW2"/>
-                                    <segue destination="eyn-Ia-E3j" kind="show" id="V35-2H-Psp"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kWd-1I-eD9">
@@ -277,9 +276,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="emailTextField" destination="zlh-Sc-oGz" id="ayN-T7-Sgb"/>
-                        <outlet property="logInButton" destination="yFF-8P-hcO" id="uZd-o0-t4d"/>
                         <outlet property="passwordTextField" destination="Gsr-5l-31N" id="qfi-a4-0zD"/>
                         <outlet property="signUpButton" destination="yFF-8P-hcO" id="dme-lK-VIG"/>
+                        <segue destination="eyn-Ia-E3j" kind="show" identifier="showTableViewFromSignUp" id="BL4-80-ECi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GZ9-ue-CqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -292,8 +291,8 @@
         <image name="logout" width="30" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="BL4-80-ECi"/>
         <segue reference="5bG-13-8Yj"/>
-        <segue reference="n15-K9-OWb"/>
         <segue reference="MAU-RE-A9L"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,7 +10,11 @@
 		02B20EF119E1C724552E8BC8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B53A1DA690F1776C339BBE0 /* libPods.a */; };
 		C132C3811A6DBBF2004A2566 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = C132C3801A6DBBF2004A2566 /* podfile */; };
 		C132C3831A6E8C13004A2566 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C132C3821A6E8C13004A2566 /* libsqlite3.dylib */; };
-		C132C3881A6E9F8E004A2566 /* ToDoItemTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C132C3871A6E9F8E004A2566 /* ToDoItemTestCase.m */; };
+		C132C3BE1A71FBAA004A2566 /* LoginViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C132C3BD1A71FBAA004A2566 /* LoginViewControllerTests.m */; };
+		C132C3C01A71FBC9004A2566 /* ToDoTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C132C3BF1A71FBC9004A2566 /* ToDoTableViewControllerTests.m */; };
+		C132C3C21A71FBDD004A2566 /* DetailedViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C132C3C11A71FBDD004A2566 /* DetailedViewControllerTests.m */; };
+		C132C3C41A71FF7F004A2566 /* DataServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C132C3C31A71FF7F004A2566 /* DataServiceTests.m */; };
+		C132C3C61A723AB1004A2566 /* SignUpViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C132C3C51A723AB1004A2566 /* SignUpViewControllerTests.m */; };
 		C19533BF1A6C69AD005E5CD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C19533BE1A6C69AD005E5CD9 /* main.m */; };
 		C19533C21A6C69AD005E5CD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C19533C11A6C69AD005E5CD9 /* AppDelegate.m */; };
 		C19533C51A6C69AD005E5CD9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C19533C41A6C69AD005E5CD9 /* ViewController.m */; };
@@ -45,7 +49,11 @@
 		5B53A1DA690F1776C339BBE0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C132C3801A6DBBF2004A2566 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C132C3821A6E8C13004A2566 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		C132C3871A6E9F8E004A2566 /* ToDoItemTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemTestCase.m; sourceTree = "<group>"; };
+		C132C3BD1A71FBAA004A2566 /* LoginViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControllerTests.m; sourceTree = "<group>"; };
+		C132C3BF1A71FBC9004A2566 /* ToDoTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewControllerTests.m; sourceTree = "<group>"; };
+		C132C3C11A71FBDD004A2566 /* DetailedViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedViewControllerTests.m; sourceTree = "<group>"; };
+		C132C3C31A71FF7F004A2566 /* DataServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataServiceTests.m; sourceTree = "<group>"; };
+		C132C3C51A723AB1004A2566 /* SignUpViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewControllerTests.m; sourceTree = "<group>"; };
 		C19533B91A6C69AD005E5CD9 /* ToDoListTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19533BD1A6C69AD005E5CD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C19533BE1A6C69AD005E5CD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -175,7 +183,11 @@
 			isa = PBXGroup;
 			children = (
 				C19533D81A6C69AD005E5CD9 /* ToDoListTestTests.m */,
-				C132C3871A6E9F8E004A2566 /* ToDoItemTestCase.m */,
+				C132C3BD1A71FBAA004A2566 /* LoginViewControllerTests.m */,
+				C132C3C51A723AB1004A2566 /* SignUpViewControllerTests.m */,
+				C132C3BF1A71FBC9004A2566 /* ToDoTableViewControllerTests.m */,
+				C132C3C11A71FBDD004A2566 /* DetailedViewControllerTests.m */,
+				C132C3C31A71FF7F004A2566 /* DataServiceTests.m */,
 				C19533D61A6C69AD005E5CD9 /* Supporting Files */,
 			);
 			path = ToDoListTestTests;
@@ -423,7 +435,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C132C3881A6E9F8E004A2566 /* ToDoItemTestCase.m in Sources */,
+				C132C3C21A71FBDD004A2566 /* DetailedViewControllerTests.m in Sources */,
+				C132C3C01A71FBC9004A2566 /* ToDoTableViewControllerTests.m in Sources */,
+				C132C3C41A71FF7F004A2566 /* DataServiceTests.m in Sources */,
+				C132C3BE1A71FBAA004A2566 /* LoginViewControllerTests.m in Sources */,
+				C132C3C61A723AB1004A2566 /* SignUpViewControllerTests.m in Sources */,
 				C19533D91A6C69AD005E5CD9 /* ToDoListTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

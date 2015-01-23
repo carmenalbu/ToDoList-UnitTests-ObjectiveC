@@ -2,7 +2,7 @@
 //  ToDoTableViewController.m
 //  ToDoListTest
 //
-//  Created by Carmen Albu on 19/01/15.
+//  Created by Carmen Albu on 18/01/15.
 //  Copyright (c) 2015 Carmen Albu. All rights reserved.
 //
 
@@ -186,10 +186,13 @@
     }
 }
 
-- (void) updateCellAtIndexPath//:(NSIndexPath*)indexPath
+- (void) updateCellAtIndexPath
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    if(indexPath)
+    {
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
 }
 
 - (void) longPressCell:(UILongPressGestureRecognizer*) gestureRecognizer

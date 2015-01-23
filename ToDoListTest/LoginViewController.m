@@ -2,7 +2,7 @@
 //  LoginViewController.m
 //  ToDoListTest
 //
-//  Created by Carmen Albu on 19/01/15.
+//  Created by Carmen Albu on 18/01/15.
 //  Copyright (c) 2015 Carmen Albu. All rights reserved.
 //
 
@@ -11,6 +11,7 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "ToDoTableViewController.h"
 #import "AppDelegate.h"
+#import "GenericUtils.h"
 
 @interface LoginViewController ()
 
@@ -39,11 +40,61 @@
 */
 
 - (IBAction)action_logIn:(id)sender {
+    UserModel *user = [[UserModel alloc] init];
+    
+    NSString *email = self.emailTextField.text;
+    NSString *password = self.passwordTextField.text;
+    
+    user.email = user.username = email;
+    user.password = password;
+    
+    
+}
 
+- (void) loginAction:(UserModel*)user {
+    if(user.password.length > 0 && user.email.length >0)
+    {
+        if([GenericUtils validateEmail:user.email])
+        {
+            
+            
+            [DataService signIn:user withCompletionBlock:^(BOOL succeeded, NSError *error) {
+                if(succeeded)
+                {
+                    [self goToHomescreen];
+                }
+                else
+                {
+                    NSString *errorMessage = @"An error has occurred. Try again.";
+                    
+                    if(error)
+                    {
+                        errorMessage = error.userInfo[@"error"];
+                    }
+                    
+                    [GenericUtils showAlertViewWithTitleAndOneButton:@"Error" andMessage:errorMessage withClosure:^(NSInteger index) {
+                        NSLog(@"error login");
+                    }];
+                }
+            }];
+        }
+        else
+        {
+            [GenericUtils showAlertViewWithTitleAndOneButton:@"Attention" andMessage:@"Invalid email address." withClosure:^(NSInteger index) {
+                NSLog(@"invalid email address");
+            }];
+        }
+    }
+    else
+    {
+        [GenericUtils showAlertViewWithTitleAndOneButton:@"Attention" andMessage:@"All fields are mandatory." withClosure:^(NSInteger index) {
+            NSLog(@"closure");
+        }];
+    }
 }
 
 - (IBAction)action_signUp:(id)sender {
-
+    //[self performSegueWithIdentifier:@"goToSignUpViewController" sender:self];
 }
 
 - (IBAction)action_loginWithFacebook:(id)sender {

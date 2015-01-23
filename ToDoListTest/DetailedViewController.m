@@ -2,7 +2,7 @@
 //  DetailedViewController.m
 //  ToDoListTest
 //
-//  Created by Carmen Albu on 19/01/15.
+//  Created by Carmen Albu on 18/01/15.
 //  Copyright (c) 2015 Carmen Albu. All rights reserved.
 //
 
@@ -31,6 +31,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initSetup];
+}
+
+- (void) initSetup {
     appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
     self.titleTextView.delegate = self.descriptionTextView.delegate = self;
@@ -164,8 +168,6 @@
         self.toDoModel.completed = YES;
         self.completeBarItem.title = MARK_INCOMPLETE;
     }
-    
-    //[self saveItem];
 }
 
 @end
